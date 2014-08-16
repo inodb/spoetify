@@ -1,0 +1,37 @@
+body {
+    text-align: center;
+}
+.green {
+    color:#75D91E;
+}
+.grnbutton {
+    color: #5E5E5E;
+    background-color: #F8F8F8;
+    border-color: #E7E7E7;
+}
+.center {
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+}
+.form-poem:focus {
+    border-color: rgb(231, 231, 231);
+    outline: 0px none;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(117, 217, 30, 0.6);
+}
+.form-poem {
+    height: auto;
+    display: center;
+    width: 50%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: rgb(94, 94, 94);
+    vertical-align: middle;
+    background-color: rgb(248, 248, 248);
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}

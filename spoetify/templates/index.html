@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %} - Home{% endblock %}
+{% block content %}
+<!--<form class="form-horizontal" action="" method="post" name="poemform">-->
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <p>
+          <h3>Become a Spoet!</h3>
+          - Write a poem<br />
+          - Press the button<br />
+          - Watch how your poem turns into song titles
+        </p>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <p>
+        <form role="form" method="post" action="">
+          <div class="form-group"> 
+            {% if poem %}
+              <textarea name="poem" class="form-control form-poem center" rows="4">{{ poem }}</textarea>
+            {% else %}
+            <textarea name="poem" class="form-control form-poem center" rows="4"></textarea>
+            {% endif %}
+          </div>
+          <button type="submit" class="btn grnbutton">S<span class="green">poet</span>ify!</button>
+        </form>
+      </p>
+    </div>
+  </div>
+  {% if hits %}
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <p>
+          {% for hit in hits %}
+            {% for t in hit.sp_tracks %}
+              {% if t %}
+                <iframe src="https://embed.spotify.com/?uri=spotify:track:{{ t.id }}" width="400" height="80" frameborder="0" allowtransparency="true"></iframe><br />
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+      </p>
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
