@@ -5,14 +5,14 @@ Spoetify
 Spoetify is a website built in Flask that takes a poem and turns it into a
 list of Spotify songs using the `Spotify Web API`_.
 
-Check out the demo at: `http://spoetify.herokuapp.com/ <http://bit.ly/spoetify-heroku>`_
+Check out the demo at `spoetify.herokuapp.com <http://bit.ly/spoetify-heroku>`_
 
 .. _`Spotify Web API`: https://developer.spotify.com/web-api/
 
 Requirements
 -------------
 * Python 2.7+
-* [More](requirements.txt)
+* `requirements.txt <requirements.txt>`_
 
 
 Installation
@@ -20,23 +20,27 @@ Installation
 Download the repository:
 
 ::
+
     git clone https://github.com/inodb/spoetify
     cd spoetify
 
 Install dependencies with pip:
 
 ::
+
     pip install -r requirements.txt
 
 Run the tests:
 
 ::
+
     nosetests
 
 
 Run the webserver
 -----------------
 ::
+
     python spoetify/app.py
 
 
