@@ -42,10 +42,25 @@ Run the webserver
 ::
 
     python spoetify/app.py
+    
+    
+How is the text converted to songs?
+------------------------------------
+The input text is split on every newline and comma. Then every ordered
+grouping of words from thus constructed "sentences" is searched with the `Spotify Web API`_. Only exact lowercase 
+matches of titles are used in the result. Some songs end with ``- Live`` or 
+something similar, so everything behind ``-`` is trimmed as well before matching.
+For caching in-between results from Spotify a dictionary is used on a per request basis. From
+all the ordered grouping of words, the best grouping is the one that matches
+the most number of words using the fewest number of songs. All the necessary functions
+for this functionality are in this notebook:
+
+http://nbviewer.ipython.org/github/inodb/spoetify/blob/master/notebooks/algorithm.ipynb
 
 
 Ideas for improvements
 ----------------------
+- Create a playlist with resulting songs
 - Add better caching. Now it's just per request in a dict. Maybe Redis.
 - Add parallelization of query searching. Does everything sequentially now.
 - Take suboptimal with specified time limit.
